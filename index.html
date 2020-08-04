@@ -1,0 +1,20 @@
+<style>
+  .carousel {
+    width: 500px;
+    height: 300px;
+    outline: 1px solid salmon;
+    white-space: nowrap;
+    /* overflow: hidden; */
+    zoom: 0.25;
+    margin: 0 auto;
+  }
+  .carousel > img {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+  }
+</style>
+<!-- 对应 main4.js，要保证挂载之前，body 存在 -->
+<body></body>
+<!-- 启动 webpack-dev-server 后，这里要直接引用路径，而不是 ./dist/main.js -->
+<script src="./main.js"></script>
