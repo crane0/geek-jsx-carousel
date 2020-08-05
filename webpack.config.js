@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './carousel/main.js',
+  entry: './sfc/main.js',
   module: {
     rules: [
       {
@@ -13,6 +13,13 @@ module.exports = {
             // pragma 表示将 jsx 编译后的函数名，默认是 React.createElement
             plugins: [["@babel/plugin-transform-react-jsx",{ pragma: 'createElement'}]]
           }
+        }
+      },
+      {
+        test: /\.view$/,
+        exclude: /node_modules/,
+        use: {
+          loader: require.resolve('./sfc/my-loader.js')
         }
       }
     ]
