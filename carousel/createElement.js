@@ -2,6 +2,7 @@
   以 main7.js 最终的 jsx 语法模型和 carousel.html 为基础，将其合并起来。
   - 在 main.js 中加了动画，并且将函数封装在这个 js 中。
 */
+import { getGesture } from './gesture'
 export function createElement(Cls, attributes, ...children) {
   /* 
     ƒ Child() {_classCallCheck(this, Child);} null []
@@ -59,6 +60,17 @@ export class Wrapper {
 
   setAttribute(name, value) { // attribute
     this.root.setAttribute(name, value)
+
+    // 添加手势控制时，元素添加的事件在这里处理。
+    if (name.match(/^on([\s\S]+)$/)) {
+      let eventName = RegExp.$1.replace(/^[\s\S]/, c => c.toLowerCase())
+      this.addEventListener(eventName, value)
+    }
+
+    // 因为 getGesture 参数是一个 Element，所以在这里处理。
+    if (name === 'enableGesture') {
+      getGesture(this.root)
+    }
   }
 
   appendChild(child) { // children

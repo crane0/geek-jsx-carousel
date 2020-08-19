@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './sfc/main.js',
+  entry: './carousel/main2.js',
   module: {
     rules: [
       {
@@ -15,13 +15,13 @@ module.exports = {
           }
         }
       },
-      {
-        test: /\.view$/,
-        exclude: /node_modules/,
-        use: {
-          loader: require.resolve('./sfc/my-loader.js')
-        }
-      }
+      // {
+      //   test: /\.view$/,
+      //   exclude: /node_modules/,
+      //   use: {
+      //     loader: require.resolve('./sfc/my-loader.js')
+      //   }
+      // }
     ]
   },
   mode: 'development',
