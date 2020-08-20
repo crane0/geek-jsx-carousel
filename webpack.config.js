@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './carousel/main2.js',
+  entry: './panel/listView.js',
   module: {
     rules: [
       {
