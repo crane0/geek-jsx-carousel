@@ -6,6 +6,16 @@
 import { createElement, Text, Wrapper } from './createElement'
 import { TimeLine, Animation } from './animation'
 import { ease } from './cubicBezier'
+// 配置了 css 相关的 loader后，引入才不会报错
+// 用自己写的 css-loader 后，这里只需要引入进来即可。不用下面添加 css 的代码了。
+import css from './carousel.css'
+
+// 可以简单的将导入的 css 添加。
+// let style = document.createElement('style')
+// style.innerHTML = css[0][1]
+// document.documentElement.appendChild(style)
+
+
 
 class Carousel {
   constructor() {

@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './panel/listView.js',
+  entry: './carousel/main2.js',
   module: {
     rules: [
       {
@@ -22,6 +22,21 @@ module.exports = {
       //     loader: require.resolve('./sfc/my-loader.js')
       //   }
       // }
+      // {
+      //   test: /\.css$/,
+      //   exclude: /node_modules/,
+      //   use: {
+      //     loader: 'css-loader',
+      //   }
+      // },
+      // 自己的 loader
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: {
+          loader: require.resolve('./carousel/css-loader.js')
+        }
+      },
     ]
   },
   mode: 'development',
